@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        border-collapse: collapse;
+    }
+</style>
+<body>
+    <table>  
+        <tr>
+            <td><h2>MY BLOG &nbsp;</h2></th>
+            <td bgcolor="gray"><a href="{% url 'main' %}" style="text-decoration:none; color:white; ">&nbsp; 저를 소개합니다 &nbsp;|</a></td>
+            <td bgcolor="gray"><a href="{% url 'diary' %}" style="text-decoration:none; color:white;">&nbsp; 나의 일기 &nbsp;|</a></td>
+            <td bgcolor="gray"><a href="{% url 'write' %}" style="text-decoration:none; color:white;">&nbsp; 일기 작성 &nbsp;|</td>
+            <td bgcolor="gray"><a href="{% url 'album' %}" style="text-decoration:none; color:white;">&nbsp; 나의 앨범 &nbsp;</td>
+        </tr>
+    </table><p>
+    {% block contents %}
+        
+    {% endblock  %}
+    
+</body>
+</html>

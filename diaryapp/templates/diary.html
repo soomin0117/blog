@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block contents %}
+    {% for item in diary %}
+        <hr>
+        <h3>제목: {{item.title}}</h3><br>
+        <div align="right"><b>{{item.pub_date}}</b></div> <br>
+        {{item.slice}} ... <a href="{% url 'detail' item.id %}">더보기</a> <br>
+    {% endfor %}
+{% endblock %}

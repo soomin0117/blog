@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contents %}
+<div align="center">
+    <hr><p>
+    <img src="{% static 'image/angry.jpg' %}" alt="">
+    <hr>
+    <h3>내 이름은 강아지!! 화가 났지!!</h3>
+    궁금한 점은 댓글을 달아줘!!
+    <a href="{% url 'community' %}">커뮤니티 창으로 이동</a>
+</div>
+{% endblock %}

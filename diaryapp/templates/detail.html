@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block contents %}
+    <hr>
+    <div style="float: right; margin-right:10px ">
+        <a href="{% url 'rewrite' diary_detail.id %}">수정</a> | 
+        <a href="{% url 'remove' diary_detail.id %}">삭제</a><br>
+    </div><br>
+    <h3>제목: {{diary_detail.title}}</h3>
+    <div align="right"><b>{{diary_detail.pub_date}}</b></div><br>
+    {{diary_detail.body}}<br><hr><br>
+    <div align="center">
+        {% if diary_order > 0 %}
+            <a href="{% url 'prev' diary_detail.id %}">[이전 일기]</a> 
+        {% endif %}
+        <a href="{% url 'diary' %}">[목록으로]</a> 
+        {% if diary_order < 2 %} 
+            <a href="{% url 'next' diary_detail.id %}">[다음 일기]</a>
+        {% endif %}
+    </div>
+{% endblock %}
